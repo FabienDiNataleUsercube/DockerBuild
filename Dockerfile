@@ -28,7 +28,5 @@ RUN C:\TEMP\vs_buildtools.exe --quiet --wait --norestart --nocache `
 ADD https://www.7-zip.org/a/7z1900-x64.exe C:\TEMP\7z1900-x64.exe
 RUN start /wait C:\TEMP\7z1900-x64.exe /S 
 
-VOLUME c:/response
-
 # Define the entry point for the Docker container to starts the build powershell and leave
 ENTRYPOINT ["C:\\BuildTools\\Common7\\Tools\\VsDevCmd.bat", "&&","powershell.exe", "c:\\source\\LaunchBuild.ps1"]
